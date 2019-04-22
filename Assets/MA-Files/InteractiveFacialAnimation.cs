@@ -56,7 +56,7 @@ public class InteractiveFacialAnimation : MonoBehaviour
     private bool fPlayMainAfterTransition;
     private bool fWithTransitionIn;
     private bool fPlayMain;
-    private bool smoothMainClips = true;
+    //private bool smoothMainClips = true;
     private bool normalize = false;
     private bool fPlayLoopMain = false;
     private bool fInitLoopMain = true;
@@ -327,7 +327,7 @@ public class InteractiveFacialAnimation : MonoBehaviour
         // Interpolation website: http://paulbourke.net/miscellaneous/interpolation/
         currentTime += Time.deltaTime;
         float mu = currentTime / lerpBlendDuration;
-        float t;
+        //float t;
         float upcomingBlendWeight = 0;
         float pStart = 0f;
         float pEnd = 1f;
@@ -406,7 +406,7 @@ public class InteractiveFacialAnimation : MonoBehaviour
         // LERP Init
         mainLoopCurrentTime += Time.deltaTime;
         float mu = mainLoopCurrentTime / mainLoopTriggerTime;
-        float t;
+        //float t;
         float upcomingBlendWeight = 0;
         float pStart = 0f;
         float pEnd = 1f;

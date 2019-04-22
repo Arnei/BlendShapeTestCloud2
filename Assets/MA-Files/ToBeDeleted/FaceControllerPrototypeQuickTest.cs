@@ -9,8 +9,8 @@ public class FaceControllerPrototypeQuickTest : MonoBehaviour {
     public bool goToAngry = false;
     public bool goToNeutral = false;
 
-    private bool canPlayHappyMain = false;
-    private bool canPlayAngryMain = false;
+    //private bool canPlayHappyMain = false;
+    //private bool canPlayAngryMain = false;
     private Animator animator;
 
 	// Use this for initialization
@@ -30,7 +30,7 @@ public class FaceControllerPrototypeQuickTest : MonoBehaviour {
         //if (animator.GetCurrentAnimatorStateInfo(1).IsName("Emotion Tree.Emotion Tree")) Debug.Log("This is an Emotion Tree");
         //if (animator.GetCurrentAnimatorStateInfo(1).IsName("Emotion Tree.Happy")) Debug.Log("This is a Happy");
 
-        AnimatorClipInfo[] animClipInf = animator.GetCurrentAnimatorClipInfo(1);
+        //AnimatorClipInfo[] animClipInf = animator.GetCurrentAnimatorClipInfo(1);
         //Debug.Log("AnimClipInfo Length: " + animClipInf.Length);
         //Debug.Log("AnimClipInfo 0 Name: " + animClipInf[0].clip.name);
 

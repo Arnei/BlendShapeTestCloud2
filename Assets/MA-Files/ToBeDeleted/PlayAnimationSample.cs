@@ -40,7 +40,7 @@ public class PlayAnimationSample : MonoBehaviour
         // Wrap the clip in a playable
 
         var clipPlayable = AnimationClipPlayable.Create(playableGraph, clip);
-        var clipPlayable1 = AnimationClipPlayable.Create(playableGraph, clip1);
+        //var clipPlayable1 = AnimationClipPlayable.Create(playableGraph, clip1);
 
         
         // Wrap AnimController

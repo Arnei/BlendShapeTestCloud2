@@ -61,7 +61,7 @@ public class phonemeBasedLipSync : MonoBehaviour
     public int maxNumberOfActiveVisemes = 5;
     public float minActivationThreshold = 0.1f;
 
-    AudioSource audio;
+    new AudioSource audio;
 
     // Start is called before the first frame update
     void Start()

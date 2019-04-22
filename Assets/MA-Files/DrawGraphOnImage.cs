@@ -11,8 +11,6 @@ public class DrawGraphOnImage : MonoBehaviour
     private Texture2D texture;
     private Color32[] resetColorArray;
 
-    float testX = 0f;
-
     // Start is called before the first frame update
     void Start()
     {

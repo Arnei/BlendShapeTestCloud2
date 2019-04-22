@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class TestMicrophone : MonoBehaviour
 {
-    private AudioSource audio;
+    private new AudioSource audio;
 
-    private float[] sample = new float[1024];
     private float[] spectrum = new float[1024];
 
 

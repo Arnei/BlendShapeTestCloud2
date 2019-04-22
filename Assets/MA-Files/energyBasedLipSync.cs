@@ -19,7 +19,7 @@ public class energyBasedLipSync : MonoBehaviour
     private int samplesPerBlock;
     private float samplingFrequency;
 
-    private AudioSource audio;
+    private new AudioSource audio;
 
     private float[] spectrum;
     private float[] previousSpectrum;

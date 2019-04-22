@@ -75,14 +75,14 @@ public class InteractiveFacialAnimationV2 : MonoBehaviour
     private List<IFAClip> currentlyPlayingClips;        // Keep track of clips with a weight > 0 to A. update them and B. Allow for proper transitions
     private IFABlender blender;                         // Variable storing the currently active blending instance
     private string transitionEmotion;                   // Emotion transitioning to
-    private float lerpBlendDuration = 0.5f;             // How long a transition should take
+    //private float lerpBlendDuration = 0.5f;             // How long a transition should take
     private int emotionNumber = 0;                      // Which clips to play for a given emotion
     private int emotionNumberCount;                     // Count of total available emotionNumbers aside from the current emotionNumber
 
 
     private const int mainMixerMainIndex = 0;           // Indices for the mainMixer Variable
     private const int mainMixerCopyIndex = 1;
-    private float mainLoopTriggerTime = 1.0f;           // Time over which a main loop is interpolated with itself. [TODO] Should be made relative to main clip duration, as it will behave strangely for small durations.
+    //private float mainLoopTriggerTime = 1.0f;           // Time over which a main loop is interpolated with itself. [TODO] Should be made relative to main clip duration, as it will behave strangely for small durations.
 
     /*
      * Awake
@@ -659,7 +659,7 @@ public class IFAClip
         // LERP Init
         mainLoopCurrentTime += Time.deltaTime;
         float mu = mainLoopCurrentTime / mainLoopTriggerTime;
-        float t;
+        //float t;
         float upcomingBlendWeight = 0;
         float pStart = 0f;
         float pEnd = 1f;
@@ -838,7 +838,7 @@ public class IFABlenderMain : IFABlender
         // Interpolation website: http://paulbourke.net/miscellaneous/interpolation/
         currentTime += Time.deltaTime;
         float mu = currentTime / blendDuration;
-        float t;
+        //float t;
         float upcomingBlendWeight = 0;
         float pStart = 0f;
         float pEnd = 1f;
@@ -1040,7 +1040,7 @@ public class IFABlenderTransition : IFABlender
         // Interpolation website: http://paulbourke.net/miscellaneous/interpolation/
         currentTime += Time.deltaTime;
         float mu = currentTime / blendDuration;
-        float t;
+        //float t;
         float upcomingBlendWeight = 0;
         float pStart = 0f;
         float pEnd = 1f;

@@ -358,10 +358,6 @@ public class ProcessLookFor
     private Quaternion lookToCamera;
     private Quaternion diffQuat;
 
-    float xVelocity = 0.0f;
-    float yVelocity = 0.0f;
-    float zVelocity = 0.0f;
-
     public ProcessLookFor(GameObject toBeRotatedObject, Quaternion initalOffsetRotation, GameObject rootParentObject)
     {
         inObject = toBeRotatedObject;

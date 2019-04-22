@@ -60,7 +60,6 @@ public class LipSync : MonoBehaviour
 
     // For accessing blendshapes
     private SkinnedMeshRenderer skinnedMeshRenderer;        
-    private Mesh skinnedMesh;
 
     // For getting speech-shape values
     private energyBasedLipSync energyShapeValuesCalculator; // Attached script that calculates lip sync shape values based on energy
@@ -78,7 +77,7 @@ public class LipSync : MonoBehaviour
     private bool speakingLastFrame;
     private bool isSpeaking = false;
     private bool isSpeakingLastFrame;
-    private AudioSource audio;
+    private new AudioSource audio;
     float[] clipSampleData = new float[1024];
 
     private bool usingMicrophone = false;
@@ -102,7 +101,6 @@ public class LipSync : MonoBehaviour
             skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
         }
 
-        skinnedMesh = skinnedMeshRenderer.sharedMesh;
         energyShapeValuesCalculator = GetComponent<energyBasedLipSync>();
         phonemeShapeValuesCalculator = GetComponent<phonemeBasedLipSync>();
 

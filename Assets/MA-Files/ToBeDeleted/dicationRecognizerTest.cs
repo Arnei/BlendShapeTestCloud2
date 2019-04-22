@@ -14,7 +14,7 @@ public class dicationRecognizerTest : MonoBehaviour
 
     private DictationRecognizer m_DictationRecognizer;
 
-    AudioSource audio;
+    new AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
