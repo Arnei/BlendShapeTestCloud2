@@ -117,7 +117,6 @@ public class InteractiveFacialAnimationV2ControllerEditor : Editor
         {
             EditorGUI.BeginChangeCheck();
 
-            bool newGoToEmotion;
             EditorGUILayout.ToggleLeft(m_Target.emotionNames[i], emotionPlays[i]);
 
             if (EditorGUI.EndChangeCheck())

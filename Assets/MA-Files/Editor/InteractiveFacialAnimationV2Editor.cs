@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEditor;
 
 /*
- * COPIED FROM PERHEADCONTROLLEREDITOR
- * 
  * Provide a graphic interface to
  * - Add AnimationClips to a character
  * - Add a mask to the facial animation
@@ -24,8 +22,9 @@ public class InteractiveFacialAnimationV2Editor : Editor
     {
         m_Target = (InteractiveFacialAnimationV2)target;
 
-        DrawDefaultInspector(); // Draws all the stuff Unity would normally draw
         DrawEmotionList();
+        DrawDefaultInspector(); // Draws all the stuff Unity would normally draw
+        
     }
 
     void DrawEmotionList()
@@ -45,6 +44,7 @@ public class InteractiveFacialAnimationV2Editor : Editor
         }
 
         // Draw emotion list
+        GUILayout.Label("Fill In Animation Clips", EditorStyles.boldLabel);
         showClips = EditorGUILayout.Foldout(showClips, "EmotionClips");
         if (showClips)
         {
@@ -91,9 +91,9 @@ public class InteractiveFacialAnimationV2Editor : Editor
 
 
         // Draw a Button to add more clips
-        if (GUILayout.Button("Add new Clips", GUILayout.Height(20)))
+        if (GUILayout.Button("Add more Clips", GUILayout.Height(20)))
         {
-            Undo.RecordObject(m_Target, "Add new Clips");
+            Undo.RecordObject(m_Target, "Add more Clips");
             m_Target.emotionObjects[index].animationGroupList.Add(new AnimationGroup());
             EditorUtility.SetDirty(m_Target);
         }

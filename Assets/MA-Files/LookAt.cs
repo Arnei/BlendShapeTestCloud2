@@ -7,13 +7,21 @@ public class LookAt : MonoBehaviour
 
     // Public Variables
     [Header("Fill In Components and Pre-Runtime Settings")]
+    [Tooltip("Head joint of the character")]
     public GameObject head;
+    [Tooltip("Left eye joint of the character")]
     public GameObject leftEye;
+    [Tooltip("Right eye joint of the character")]
     public GameObject rightEye;
+    [Tooltip("The Gameobject which will be rotated towards.")]
     public GameObject lookAtTarget;
+    [Tooltip("Optional: The left eye of the character that is being looked at (for example the left eye camera in VR). Required for facemode.")]
     public GameObject lookAtLeftEye;
+    [Tooltip("Optional: The right eye of the character that is being looked at (for example the right eye camera in VR). Required for facemode.")]
     public GameObject lookAtRightEye;
+    [Tooltip("Optional: The mouth of the character that is being looked at. Required for facemode.")]
     public GameObject lookAtMouth;
+    [Tooltip("Fixes the initial head joint rotation of the character 'Claire'")]
     public bool HACKFixInitialHeadRotiationWhenUsingInteractiveFacialAnimation;
 
     [Header("Controls")]
@@ -25,18 +33,27 @@ public class LookAt : MonoBehaviour
     public bool stopApplyingAnimation;
     [Tooltip("Whether the head should be able to move or not.")]
     public bool stopHeadMovement;
-    [Tooltip("Whether the character should look at the object specified by lookAtObject or the other ones.")]
+    [Tooltip("Whether the character should look at the object specified by lookAtObject or the three other ones.")]
     public bool faceMode;
 
     [Header("Fine-Tuning Parameters")]
+    [Tooltip("Maximum angle head and eyes will rotate before stopping")]
     public float MaxTurnAngle = 50.0f;
+    [Tooltip("Pursuit Mode: Difference between head and eyes after which head will start moving.")]
     public float pursuitStartHeadFollow = 13.0f;
+    [Tooltip("Pursuit Mode: Difference between head and eyes after which head will stop moving.")]
     public float pursuitStopHeadFollow = 12.0f;
+    [Tooltip("Pursuit Mode: Maximum speed of the head. Should not exceed eye speed.")]
     public float pursuitHeadSpeed = 3.0f;
+    [Tooltip("Pursuit Mode: Maximum speed of the eyes.")]
     public float pursuitEyeSpeed = 10.0f;
+    [Tooltip("Gaze Mode: Difference between head and eyes after which head will start moving.")]
     public float gazeStartHeadFollow = 14.5f;
+    [Tooltip("Gaze Mode: Difference between head and eyes after which head will stop moving.")]
     public float gazeStopHeadFollow = 14.0f;
+    [Tooltip("Gaze Mode: Maximum speed of the head. Should not exceed eye speed.")]
     public float gazeHeadSpeed = 3.0f;
+    [Tooltip("Gaze Mode: Maximum speed of the eyes.")]
     public float gazeEyeSpeed = 15.0f;
 
     // The actual object that will be in focus

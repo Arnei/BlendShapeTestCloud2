@@ -13,7 +13,8 @@ using UnityEngine.Playables;
 [RequireComponent(typeof(Animator))]
 public class InteractiveFacialAnimationV2 : MonoBehaviour
 {
-    // A mask should be giving in order to avoid overriding body animation
+    [Header("Fill In Components")]
+    [Tooltip("A mask masking everything but the characters head in order to avoid accidentally overriding body animation")]
     public AvatarMask headMask;
 
     // Public Data Structures
@@ -23,23 +24,35 @@ public class InteractiveFacialAnimationV2 : MonoBehaviour
     public List<GoToEmotionEntry> goToEmotionList;              // Contains emotion names and whether they should be transitioned to 
 
     // For display purposes
+    [Tooltip("Optional: A gameobject with the DrawGraphOnImage component attached. Draws interpolation onto a GUI Image.")]
     public GameObject GOWithDrawGraphOnImage;
     DrawGraphOnImage drawGraphOnImage;
 
+
     // To select Interpolation modes through the inspector
     public enum interpolationENUM { Linear, Cubic, Bezier };
+    [Header("Settings")]
+    [Tooltip("Select the preferred interpolation mode.")]
     public interpolationENUM interpolationMode;
+    [Tooltip("For Bezier interpolation. Sets the Y coordinate for (0,Y)")]
     public float pBezierP1 = 0.7f;
+    [Tooltip("For Bezier interpolation. Sets the Y coordinate for (1,Y)")]
     public float pBezierP2 = 0.3f;
 
-    // Start Emotion
+    [Tooltip("Set emotion that starts playing when playing the scene.")]
     public string startEmotion = "Neutral";
 
     // Public Flags
-    public bool switchBetweenTracks = true;             // Switches between clips in an Emotion, if that emotion has more than one clip. There is most certainly a smarter way to go about this. TODO: Make it smarter
-    public int switchingProbability = 1;                // The probability with which a switch will occur 
-    public int switchingProbabilityMax = 10000;         // The max value for the probability range. Min is 0
-    public bool HACKFixStuckBlendshapes = false;        // Flag for a hack that ought to fix the "stuck blendshapes" bug of the Playables API. Can and WILL break other scripts (such as the LookAt script)!
+    [Tooltip("Flag for a hack that ought to fix the 'stuck blendshapes' bug of the Playables API. Can and WILL break other scripts (such as the LookAt script)!")]
+    public bool HACKFixStuckBlendshapes = false;
+    [Header("Automatic Switching Settings")]
+    [Tooltip("Switches between clips in an Emotion, if that emotion has more than one clip.")]
+    public bool switchBetweenTracks = true;             // There is most certainly a smarter way to go about this. TODO: Make it smarter
+    [Tooltip("The probability with which a switch will occur. Ought to be set between 0 and switchingProbabilityMax. Is checked for every frame, so should be set rather low.")]
+    public int switchingProbability = 1;
+    [Tooltip("The max value for the probability range. Minimum is 0")]// 
+    public int switchingProbabilityMax = 10000;         // 
+
 
     // Private Data Structures
     private Dictionary<string, int> playablesDict;      // Find the correct PlayableInputID for a given animation clip

@@ -10,13 +10,15 @@ using UnityEngine;
 [RequireComponent(typeof(energyBasedLipSync), typeof(AudioSource))]
 public class LipSync : MonoBehaviour
 {
-    [Header("Controls")]
+    [Header("General Controls")]
     [Tooltip("Manual control to start or stop displaying lip-sync animation")]
     public bool speaking = false;
+    [Tooltip("Toggle whether the AudioClip in the AudioSource or microphone input should be used")]
     public bool useMicrophone = false;
+    [Tooltip("Only set to true when demonstrating phonemeBasedLipSync")]
     public bool usePhonemeDemonstrationValues = false;
 
-    [Header("Adjustable Parameters")]
+    [Header("Adjustable Parameters (At runtime)")]
     [Tooltip("By how many percent non-lip sync shapes should be reduced (Range 0-1)")]
     public float expressionWeight = 0.2f;                   
     [Tooltip("Time to complete blend-in/-out in seconds")]
@@ -25,7 +27,7 @@ public class LipSync : MonoBehaviour
     public float minimumSpeechActivationLevel = 0.00001f;    // Possible Improvement 1: Provide option to determine this automatically
                                                              // Possible Improvement 2: Provide range instead of a single value. The rangeValue may influence blend weights to a degree.
 
-    [Header("Adjustable Parameters for Energy Based Lip-Sync")]
+    [Header("Adjustable Parameters for Energy Based Lip-Sync (At runtime)")]
     [Tooltip("Determines degree by which spectrum data is smoothed with previous data(Range 0-1)")]
     public float smoothingVariable = 0.3f;
     [Tooltip("Should be set depending on the noise level")]
@@ -42,7 +44,7 @@ public class LipSync : MonoBehaviour
     public int lipsPressedShapeIndex;
     [Tooltip("Index of the mouth open shape (When not using a jaw bone)")]
     public int mouthOpenShapeIndex;
-    [Tooltip("An array containing all indices for shapes that influence the mouth.")]
+    [Tooltip("DO NOT CHANGE! An array containing all indices for shapes that influence the mouth. Currently hard-coded.")]
     public int[] lowerFaceShapesIndices;                   // TODO: Find a better way to set it up than hard-coding
 
     [Header("Only needs to be filled in if the character does not use a mouthOpen Blendshape")]
